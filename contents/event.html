@@ -20,31 +20,31 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#"><img src="../assets/img/logo.png" alt="Naija Yellow Catalogue Logo"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse"></div>
-        <div class=" nav-flex collapse navbar-collapse" id="navbarNav">
-            <div class="nav-item-1 mr-auto">
-                <ul>
-                    <li><a href="../index.html" class="active">Home</a></li>
-                    <li><a href="./about.html">About us</a></li>
-                    <li><a href="./pricing.html">Pricing</a></li>
-                    <li><a href="./contact-us.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="nav-item-2">
-                <ul>
-                    <li><a href="./contents/login.html">Sign-in</a></li>
-                    <li><a href="./contents/sign-up.html">Register</a></li>
-                    <li><a href="./sign-up.html" class="add-btn">+ Add Listings</a></li>
-                </ul>
-            </div>
+      <a class="navbar-brand" href="#"><img src="../assets/img/logo.png" alt="Naija Yellow Catalogue Logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse"></div>
+      <div class=" nav-flex collapse navbar-collapse" id="navbarNav">
+        <div class="nav-item-1 mr-auto">
+          <ul>
+            <li><a href="../index.html" class="active">Home</a></li>
+            <li><a href="./about.html">About us</a></li>
+            <li><a href="./pricing.html">Pricing</a></li>
+            <li><a href="./contact-us.html">Contact</a></li>
+          </ul>
         </div>
+        <div class="nav-item-2">
+          <ul>
+            <li><a href="./contents/login.html">Sign-in</a></li>
+            <li><a href="./contents/sign-up.html">Register</a></li>
+            <li><a href="./sign-up.html" class="add-btn">+ Add Listings</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
-</header>
+  </header>
 
   <main>
     <section id="main-area">
@@ -53,7 +53,9 @@
 
         <div class="box-headers">
           <div class="first">
-            <a href ="../index.html" ><h5>Yellow Pages</h5></a>
+            <a href="../index.html">
+              <h5>Yellow Pages</h5>
+            </a>
           </div>
           <div class="second">
             <h5> Events</h5>
@@ -64,24 +66,18 @@
           <div class="box-contents">
             <div class="input-icon">
               <i class="fas fa-search"></i>
-              <input type="text" name="whoweknow" placeholder="Search happenings near you" required>
-              <select required>
-                <option value="" disabled selected hidden>Category</option>
-                <option>Real Estate/Property</option>
-                <option>Beauty & Fashion</option>
-                <option>Technology & Development</option>
-                <option>Catering & Decoration</option>
-                <option>Agriculture</option>
-                <option>Resturant & Food</option>
-                <option>Construction and Renovation</option>
-                <option>Transportation</option>
-                <option>News & Media</option>
-                <option>Health and Fitness</option>
-                <option>Education & Schools</option>
-                <option>Electronics</option>
+              <input type="text" id="events" name="whoweknow" placeholder="Search happenings near you" required>
+              <select id="state" required>
+                <option value="" disabled selected hidden>Location</option>
+                <option>Abuja</option>
+                <option>Lagos</option>
+                <option>Kaduna</option>
+                <option>Osun</option>
+                <option>Ogun</option>
+                <option>Kano</option>
               </select>
-              <input type="date" class="cat" name="date">
-              <button class="search-btn">Find</button>
+              <input type="date" id="date" class="cat" name="date">
+              <button onClick="search()" type="submit" class="search-btn">Find</button>
             </div>
           </div>
         </div>
@@ -249,60 +245,61 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-container">
-        <img src="../assets/img/logo.png" alt="The Footer Image">
-        <div class="row">
-            <div class="footer-logo">
-                <div class="about-us">
-                    <h3>About Us</h3>
-                    <p>The Naija Yellow Catalogue web application is an online directory where businesses are
-                        registered and organized by category. It also a platform where users can get information
-                        on
-                        businesses by searching based on name, category or location.</p>
-                </div>
-            </div>
-            <div class="quick">
-                <h3>Quick Links</h3>
-                <ul>
-                    <a href="#">
-                        <li>Register</li>
-                    </a>
-                    <a href="#">
-                        <li>FAQs</li>
-                    </a>
-                    <a href="#">
-                        <li>Terms & Conditions</li>
-                    </a>
-                    <a href="#">
-                        <li>Top Events</li>
-                    </a>
-                    <a href="#">
-                        <li>contact Us</li>
-                    </a>
-                </ul>
-            </div>
-            <div class="newsletter">
-                <h3>Subscribe to our newsletter</h3>
-                    <form class="form-inline">
-                    <input type="text" class="form-control" placeholder="Email address"> <br>
-                    <button type="submit" class="btn btn-warning">Submit</button>
-                </form>
-            </div>
-            <div class="follow-us">
-                <h3>Follow Us</h3>
-                <span>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-medium"></i>
-                </span>
-                <p>Copyright &copy; 2020 Naija Yellow Catalogue.</p>
-            </div>
+      <img src="../assets/img/logo.png" alt="The Footer Image">
+      <div class="row">
+        <div class="footer-logo">
+          <div class="about-us">
+            <h3>About Us</h3>
+            <p>The Naija Yellow Catalogue web application is an online directory where businesses are
+              registered and organized by category. It also a platform where users can get information
+              on
+              businesses by searching based on name, category or location.</p>
+          </div>
         </div>
+        <div class="quick">
+          <h3>Quick Links</h3>
+          <ul>
+            <a href="#">
+              <li>Register</li>
+            </a>
+            <a href="#">
+              <li>FAQs</li>
+            </a>
+            <a href="#">
+              <li>Terms & Conditions</li>
+            </a>
+            <a href="#">
+              <li>Top Events</li>
+            </a>
+            <a href="#">
+              <li>contact Us</li>
+            </a>
+          </ul>
+        </div>
+        <div class="newsletter">
+          <h3>Subscribe to our newsletter</h3>
+          <form class="form-inline">
+            <input type="text" class="form-control" placeholder="Email address"> <br>
+            <button type="submit" class="btn btn-warning">Submit</button>
+          </form>
+        </div>
+        <div class="follow-us">
+          <h3>Follow Us</h3>
+          <span>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-medium"></i>
+          </span>
+          <p>Copyright &copy; 2020 Naija Yellow Catalogue.</p>
+        </div>
+      </div>
     </div>
-</footer>
+  </footer>
 
 
 
+  <script src="../assets/js/search.js"></script>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

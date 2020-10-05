@@ -3,22 +3,24 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/bc9f75cc29.js" crossorigin="anonymous"></script>
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="./assets/css/index.css">
-    <link rel="stylesheet" href="../assets/css/sign-up.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="This is the about page of the Naija Yellow 
+  Catalogue that describes what we do and our terms and policy">
+    <link rel="icon" href="../assets/img/logo2.png">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+   integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/bc9f75cc29.js" crossorigin="anonymous"></script>
 
-
-    <title>Naija Yellow Catalogue | Sign-Up</title>
-
+<!-- Style CSS -->
+<link rel="stylesheet" href="../assets/css/forgot.css">
+<link rel="stylesheet" href="../assets/css/login.css">
+<title>Naija Yellow Catalogue | Forgot Password</title>
 </head>
 
 <body>
-
+    <!-- NAVBAR SECTION -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="#"><img src="../assets/img/logo.png" alt="Naija Yellow Catalogue Logo"></a>
@@ -30,16 +32,16 @@
             <div class=" nav-flex collapse navbar-collapse" id="navbarNav">
                 <div class="nav-item-1 mr-auto">
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html" >Home</a></li>
                         <li><a href="./about.html">About us</a></li>
-                        <li><a href="./pricing.html">Pricing</a></li>
+                        <li><a href="../contents/pricing.html">Pricing</a></li>
                         <li><a href="./contact-us.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="nav-item-2">
                     <ul>
-                        <li><a href="./login.html">Sign-in</a></li>
-                        <li><a href="./sign-up.html" class="active">Register</a></li>
+                        <li><a href="./login.html"  class="active" >Sign-in</a></li>
+                        <li><a href="./sign-up.html">Register</a></li>
                         <li><a href="./sign-up.html" class="add-btn">+ Add Listings</a></li>
                     </ul>
                 </div>
@@ -47,41 +49,25 @@
         </nav>
     </header>
 
-    <section class="signup-section">
-        <div class="first-container">
-            <h1>Create Account </h1>
-            <br>
-            <button class="btn google">Sign Up with Google</button>
-            <button class="btn slack">Sign Up with Slack</button>
+    <!-- main body -->
+    <section class="forgot-section">
+        <div class="forgot-case">
+            
+            <div class="image_case">
+                <img src="../assets/img/forgotArt.png" alt="forgot image">
+            </div>
+            <div class="form_case">
+                <p class="first-text">Forgot Password</p> 
+                <p class="second-text">Seems like you forgot your password, we'll send a recovery<br>&nbsp; &nbsp;&nbsp;link to your email</p>
+                <div class="input-icon">
+                    <i class="far fa-envelope"></i>
+                    <input type="email" name="email" id="email" placeholder="Email" required ></div>
+                    <!-- <a href="../contents/reset.html"> </a>-->
+                        <button class="send-link"  type="submit" onclick="validateEmail()">Send Recovery Link</button>
+                </div>     
+            </div>
         </div>
-        <form>
-            <div class="sign-up-container">
-
-                <div class="left-container">
-                    <!-- i added id to all input -->
-                    <input type="text" name="business-name" id="business-name" placeholder="Business name"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                    <input type="email" name="email" id="email" placeholder="Email">
-                    <input type="password" name="password" id="password" placeholder="password">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                    <input type="text" name="address" id="business-address" placeholder="Address">
-                </div>
-                <div class="right-container">
-                    <!-- I added Id to all input -->
-                    <input type="text" name="location" id="location" placeholder="location">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                    <input type="text" name="city" id="city" placeholder="City">
-                    <input type="text" name="number" id="number" placeholder="Number">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                    <input type="text" name="website" id="website" placeholder="Website">
-                </div>
-
-            </div>
-            <div class="last-container">
-                <input class="check" type="checkbox" name="check-box" id="check-box"> <small>By registering, I agree to the Policy and Terms of Conditions</small> <br>
-                <!-- I added Id to the register button -->
-                <button class="btn create-account-btn" id="register-btn"> Register</button>
-                <p>Already have an account? <a href="../contents/login.html">Sign In</a></p>
-            </div>
-        </form>
-
-
+        
     </section>
 
     <!-- FOOTER -->
@@ -139,10 +125,7 @@
         </div>
     </footer>
 
-    <!-- I link file to external javascript -->
-    <script src="../assets/js/sign-up.js"></script>
-
-
+    <script src="../assets/js/forgot.js"></script>
+    
 </body>
-
 </html>
