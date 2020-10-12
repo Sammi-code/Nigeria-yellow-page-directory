@@ -110,16 +110,7 @@ function details() {
     </form>
 
 </div>`
-            // newUser = {
-            //      document.getElementById("business-name").value = userInfo[i].businessName
-            //     email: document.getElementById("email").value,
-            //     password: document.getElementById("password").value,
-            //     address: document.getElementById("business-address").value,
-            //     location: document.getElementById("location").value,
-            //     city: document.getElementById("city").value,
-            //     number: document.getElementById("number").value,
-            //     website: document.getElementById("website").value
-            // };
+
     }
 }
 
@@ -171,17 +162,17 @@ function profileNAme() {
 profileNAme()
 
 
-function profilePics() {
+// function profilePics() {
 
-    for (i = 0; i < userInfo.length; i++) {
+//     for (i = 0; i < userInfo.length; i++) {
 
-        document.getElementById("imageDisplay").value = document.getElementById("customFile").value
+//         document.getElementById("imageDisplay").value = document.getElementById("customFile").value
 
-        alert(document.getElementById("customFile").value)
-    }
+//         alert(document.getElementById("customFile").value)
+//     }
 
 
-}
+// }
 
 function uploadDOc() {
 
@@ -257,7 +248,9 @@ function getFile(e) {
 
         var img = document.getElementById("imageDisplay");
         img.src = string;
+
     }
+    localStorage.setItem("userpics", JSON.stringify(string))
 }
 
 
