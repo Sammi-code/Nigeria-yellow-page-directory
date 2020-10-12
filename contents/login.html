@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../assets/img/logo2.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/bc9f75cc29.js" crossorigin="anonymous"></script>
@@ -21,17 +23,16 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="#"><img src="../assets/img/logo.png" alt="Naija Yellow Catalogue Logo"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse"></div>
             <div class=" nav-flex collapse navbar-collapse" id="navbarNav">
                 <div class="nav-item-1 mr-auto">
                     <ul>
-                        <li><a href="../index.html" >Home</a></li>
+                        <li><a href="../index.html">Home</a></li>
                         <li><a href="./about.html">About us</a></li>
-                        <li><a href="./pricing.html" >Pricing</a></li>
+                        <li><a href="./pricing.html">Pricing</a></li>
                         <li><a href="./contact-us.html">Contact</a></li>
                     </ul>
                 </div>
@@ -54,9 +55,9 @@
             <!-- Login Details Section -->
             <div class="login-details">
                 <p id="heading">Login to Your Account!</p>
-                <button class="google-btn">Login with Google</button>
-                <button class="twitter-btn">Login with Twitter</button>
-                <p class="or">-OR-</p>
+                <!-- <button class="google-btn">Login with Google</button>
+                <button class="twitter-btn">Login with Twitter</button> -->
+                <!-- <p class="or">-OR-</p> -->
                 <br> <br>
                 <form name="login" netlify class="login-form">
                     <p>
@@ -68,8 +69,8 @@
                         <label>Password<br><br> <input type="password" name="password" id="password" /></label>
                     </p>
                     <p>
-                        <input type="radio" name="remember" /><label class="dark-color">Remember Me</label>
-                        <a href="./forgot.html" class="light-color none">Forgot Password</a>
+                        <input type="radio" name="remember" /><label class="dark-color">&nbsp; Remember Me</label>
+                        <a href="./reset.html" class="light-color none">Forgot Password</a>
                         <p>
                             <!-- I added Id to log in button -->
                             <button type="submit" id="login-button">Login To Your Account</button>
@@ -93,10 +94,8 @@
                 <div class="footer-logo">
                     <div class="about-us">
                         <h3>About Us</h3>
-                        <p>The Naija Yellow Catalogue web application is an online directory where businesses are
-                            registered and organized by category. It also a platform where users can get information
-                            on
-                            businesses by searching based on name, category or location.</p>
+                        <p>The Naija Yellow Catalogue web application is an online directory where businesses are registered and organized by category. It also a platform where users can get information on businesses by searching based on name, category
+                            or location.</p>
                     </div>
                 </div>
                 <div class="quick">
@@ -121,7 +120,7 @@
                 </div>
                 <div class="newsletter">
                     <h3>Subscribe to our newsletter</h3>
-                        <form class="form-inline">
+                    <form class="form-inline">
                         <input type="text" class="form-control" placeholder="Email address"> <br>
                         <button type="submit" class="btn btn-warning">Submit</button>
                     </form>

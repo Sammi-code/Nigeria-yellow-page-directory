@@ -40,7 +40,16 @@ const userForm = (e) => {
         location.assign("../contents/login.html")
 
     } else {
-        alert("Kindly fill all input to continue")
+        swal(
+            // {
+            // title: "Kindly fill all input to continue",
+            // showCancelButton: false,
+            // confirmButtonText: "ok",
+            // confirmButtonColor: "red"
+            // cancelButtonColor: "red"
+            // }
+            "error", "Kindly fill all input to continue!", "error"
+        )
     }
     // saving userinfo to local storage
     localStorage.setItem("userInfo", JSON.stringify(userInfo))

@@ -18,6 +18,7 @@ function close() {
     openMenu.style.display = 'initial';
 
 }
+
 //  validating form from local storage
 let userInfo = JSON.parse(localStorage.getItem("userInfo"));
 let currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -43,9 +44,26 @@ const signUser = (e) => {
     // validating log in details
     if (user) {
         // you can change this directory when hosting
-        location.assign("../contents/userspage.html")
+        swal({
+            text: "Login successful!",
+            icon: "success",
+            button: "OK",
+          });
+          document.getElementById("login-button").innerHTML = '<img src="/assets/img/ajax-loader.gif">';
+          setTimeout(() => {
+              document.getElementById('login-button').innerHTML = '';
+          },4800 );
+          setTimeout(() => {
+           window.location.assign("../contents/userspage.html");
+        },3500 );
+         
     } else {
-        alert("incorrect username or password")
+        swal({
+            text: "incorrect username or password!!",
+            icon: "error",
+            button: "OK",
+          });
+        // alert("incorrect username or password")
     }
 }
 document.getElementById("login-button").addEventListener("click", signUser);

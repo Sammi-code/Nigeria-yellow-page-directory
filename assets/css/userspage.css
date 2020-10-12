@@ -243,7 +243,7 @@ nav .nav-item-2 .add-btn:hover {
     text-align: center;
     letter-spacing: 0em;
     color: #000000;
-    font-family: " Work Sans ,Ubuntu";
+    font-family: "  Ubuntu,Work Sans";
     font-size: 14px;
     text-align: center;
     border-radius: 6px;
@@ -255,18 +255,25 @@ nav .nav-item-2 .add-btn:hover {
     line-height: 16px;
     text-align: left;
     text-transform: capitalize;
-    color: #919191;
+    color: #3A4151;
     background: transparent;
     font-weight: 400;
 }
 
 .list-group-item i {
-    color: #919191;
+    color: #3A4151;
     margin-right: 20px;
     align-items: left;
     font-weight: 900;
     font-size: 16px;
     line-height: 16px
+}
+
+.list-group button {
+    height: 70px;
+    padding-left: 10px;
+    margin-left: 10px;
+    /* width: 430px; */
 }
 
 .list-group button:nth-child(odd) {
@@ -286,10 +293,16 @@ nav .nav-item-2 .add-btn:hover {
     color: #EBBA32
 }*/
 
-.list-group button:hover {
+.list-group button:hover,
+.list-group button:active {
     color: #EBBA32;
     transition: all 0.1s ease-in-out;
-    border-left: 8px solid#EBBA32;
+    border: 5px solid#EBBA32;
+    border-right-style: none;
+    border-top-style: none;
+    border-bottom-style: none;
+    border-bottom: 1px solid #ddd;
+    outline: hidden;
 }
 
 .list-group a:hover {
@@ -367,6 +380,19 @@ span .fas {
     font-size: 16px;
 }
 
+form label {
+    color: #8F8F8F;
+    font-family: "Ubuntu";
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+form input:focus {}
+
 .fine {
     position: relative;
 }
@@ -378,11 +404,46 @@ span .fas {
     top: 80px;
 }
 
+.fine h3 {
+    position: relative;
+    left: 165px !important;
+    font-size: 20px;
+    top: 180px;
+    font-weight: bold;
+}
+
 .fine .fas {
     left: 100px;
     position: relative;
     top: -40px;
     margin-bottom: 20px;
+}
+
+#fine {
+    border: 3px dashed #C4C4C4;
+    border-radius: 5px;
+    margin-bottom: 0;
+}
+
+.fine #fas {
+    left: 250px;
+    position: relative;
+    top: 20px;
+    margin-bottom: 20px;
+}
+
+#accepted,
+.secured {
+    color: #C4C4C4;
+    margin-top: 0;
+    height: 18px;
+    font-family: "Ubuntu";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
 }
 
 .sub-registration-form {
@@ -403,33 +464,38 @@ span .fas {
     margin: 0 50px 20px 0;
 }
 
-.input {
+
+/* .input {
     width: 100p;
-}
+} */
 
 input:focus,
 select:focus,
-textarea:focus {
+textarea:focus,
+.form-control:focus {
     border: #EBBA32 5px solid;
     /* background-color: #fffcff; */
     color: rgba(0, 0, 0);
 }
 
+.form-control:focus {
+    outline: none;
+}
+
 textarea {
     margin-bottom: 20px;
     width: 650px !important;
-    padding-top: 15px
+    padding-top: 15px;
 }
 
 input[placeholder],
 .select,
 textarea {
-    font-style: normal;
+    font-family: "ubuntu";
     font-weight: normal;
     font-size: 15px;
     line-height: 15px;
     padding-left: 10px;
-    color: rgb(0, 0, 0)
 }
 
 .form-input {
@@ -445,12 +511,21 @@ form {
     flex-wrap: wrap;
 }
 
-form input {
+form input,
+form select,
+textarea {
     width: 200px;
+    outline: auto;
+    outline-color: gray;
+    border-radius: 5px;
 }
 
 .input-grey {
     background: #FEF9EA;
+}
+
+iframe {
+    border-radius: 4px;
 }
 
 hr {
@@ -486,6 +561,92 @@ hr {
     width: 20px;
     height: 20px;
     margin: 10px
+}
+
+
+/* stat css */
+
+.stat-container {
+    background: #F7F7F7;
+    box-shadow: -6px 4px 31px -8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin-left: 3rem;
+    margin-top: 2rem;
+}
+
+.top-container {
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+}
+
+.bottom-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.number {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 13px;
+}
+
+.top-container p {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 13px;
+    color: #000000;
+}
+
+.visitor {
+    color: #F8C800;
+}
+
+.right-top {
+    background: #FFFFFF;
+    border-radius: 10px;
+    transform: matrix(1, -0.01, -0.01, 1, 0, 0);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-transform: matrix(1, -0.01, -0.01, 1, 0, 0);
+    -moz-transform: matrix(1, -0.01, -0.01, 1, 0, 0);
+    -ms-transform: matrix(1, -0.01, -0.01, 1, 0, 0);
+    -o-transform: matrix(1, -0.01, -0.01, 1, 0, 0);
+    margin-left: 10rem;
+    padding-left: 5rem;
+}
+
+.left-top,
+.left-bottom {
+    padding-left: 3rem;
+}
+
+.right-bottom {
+    background: #FFFFFF;
+    border-radius: 10px;
+    transform: matrix(1, -0.01, -0.01, 1, 0, 0);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-transform: matrix(1, -0.01, -0.01, 1, 0, 0);
+    -moz-transform: matrix(1, -0.01, -0.01, 1, 0, 0);
+    -ms-transform: matrix(1, -0.01, -0.01, 1, 0, 0);
+    -o-transform: matrix(1, -0.01, -0.01, 1, 0, 0);
+    margin-left: 10rem;
+    padding-left: 5rem;
+    margin-top: 2em;
 }
 
 
@@ -780,5 +941,3 @@ footer {
         margin: auto;
     }
 }
-
-*/
