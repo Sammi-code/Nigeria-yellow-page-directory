@@ -40,6 +40,7 @@ allEvents = [
     "eventName": "Tech Talks with Mr Kenny",
     "location": 'Abuja'
   }
+
 ];
 
 function search() {
