@@ -257,7 +257,7 @@ nav .nav-item-2 .add-btn:hover {
     text-transform: capitalize;
     color: #3A4151;
     background: transparent;
-    font-weight: 400;
+    font-weight: 900;
 }
 
 .list-group-item i {
@@ -317,6 +317,10 @@ nav .nav-item-2 .add-btn:hover {
 .list-group button {
     border-left-style: hidden;
     border-right-style: hidden;
+}
+
+.list-group button:hover {
+    color: red;
 }
 
 div a {
@@ -561,6 +565,20 @@ hr {
     width: 20px;
     height: 20px;
     margin: 10px
+}
+
+.list-group-item:focus {
+    outline: none
+}
+
+.svg {
+    width: 20px;
+    line-height: 16px;
+    font-size: 16px;
+    height: 20px;
+    font-weight: 900;
+    color: #3A4151;
+    margin-right: 20px;
 }
 
 

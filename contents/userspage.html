@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../assets/img/logo2.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -47,8 +46,8 @@
     <div class="general-container">
         <div class="main-container">
             <div class="sub-container">
-                <input type="image" onchange="loadFile(event)" draggable="true" ondragstart="drag(event)" class="imageDisplay" id="imageDisplay">
-                <h3 id="h3">Hi ANONYMOUS</h3>
+                <input type="image" onchange="loadFile(event)" ondrop="imgSave()" src="/Nigeria-yellow-page-directory/assets/img/arimoro.jpeg" draggable="true" ondragstart="drag(event)" class="imageDisplay" id="imageDisplay">
+                <h3 id="h3" style=" font-weight:900;font-family:ubuntu">Hi ANONYMOUS</h3>
                 <button type="button" class="btn btn-default btn-block"><a href="#">View Profile</a></button>
                 <li name="string" id="string" style="display: none;"></li>
             </div>
@@ -56,14 +55,14 @@
 
             <div class="list-group">
 
-                <button type="button" onClick="details()" class="list-group-item list-group-item-action"><i class="fas fa-user-edit"></i> <a onclick="preventdefault(event)" href="">Edit record</a></button>
-                <button type="button" class="list-group-item list-group-item-action"><i class='fas fa-baby-carriage'></i><a href="# ">Select/Update Package</a></button>
-                <button type="button" onclick="statTab()" class="list-group-item list-group-item-action"> <i class="fa fa-line-chart"></i><a href="# ">Stats</a></button>
-                <button type="button" onclick="manageAds()" class="list-group-item list-group-item-action"> <i class="fas fa-tasks"></i><a onclick="preventdefault(event)" href="# ">Manage Ads</a></button>
-                <button type="button" onclick="uploadDOc() " class="list-group-item list-group-item-action "><i class="fas fa-cloud-upload-alt"></i><a onclick="preventdefault(event)" href="# ">Upload Documents</a></button>
-                <button type="button" class="list-group-item list-group-item-action"><i class="far fa-bell"></i><a href="# ">Notifications/ Inbox</a></button>
-                <button type="button" class="list-group-item list-group-item-action "> <i class="fa fa-gear fa-1x"></i><a href="# ">Settings</a></button>
-                <button type="button" onClick="logout()" class="list-group-item list-group-item-action ">  <i class="fas fa-sign-out-alt"></i><a onclick="preventdefault(event)"href="# ">logout</a></button>
+                <button type="button" onClick="details()" class="list-group-item list-group-item-action"><img src="/Nigeria-yellow-page-directory/assets/img/edit.svg" class="svg" width="30px" alt=""><a onclick="preventdefault(event)" href="">Edit record</a></button>
+                <button type="button" class="list-group-item list-group-item-action"><img class="svg" src="/Nigeria-yellow-page-directory/assets/img/rating.svg" alt=""><a href="# ">Select/Update Package</a></button>
+                <button type="button" onclick="statTab()" class="list-group-item list-group-item-action"> <img class="svg" src="../assets/img/stats.svg" alt=""><a href="# ">Stats</a></button>
+                <button type="button" onClick="manageAds()" class="list-group-item list-group-item-action"> <img class="svg" src="../assets/img/management.svg" alt=""><a onclick="preventdefault(event)" href="# ">Manage Ads</a></button>
+                <button type="button" onclick="uploadDOc() " class="list-group-item list-group-item-action "><img class="svg" src="../assets/img/flags.svg" alt=""><a onclick="preventdefault(event)" href="# ">Upload Documents</a></button>
+                <button type="button" onclick="Notifications()" class="list-group-item list-group-item-action"><img class="svg" src="../assets/img/notification.svg" alt=""><a href="# ">Notifications/ Inbox</a></button>
+                <button type="button" class="list-group-item list-group-item-action "> <img class="svg" src="../assets/img/flags.svg" alt=""><a href="# ">Settings</a></button>
+                <button type="button" onClick="logout()" class="list-group-item list-group-item-action "> <img class="svg" src="../assets/img/logout.svg"><a onclick="preventdefault(event)"href="# ">logout</a></button>
             </div>
         </div>
         <div class="registration-form " id="registration-form">

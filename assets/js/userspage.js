@@ -16,7 +16,7 @@ function preventdefault(e) {
     e.preventDefault()
 }
 
-function manageAds() {
+function Notifications() {
     userDetails = " ";
     for (i = 0; i < userInfo.length; i++) {
         userDetails = `<div>
@@ -26,7 +26,7 @@ function manageAds() {
         background: #686868;box-shadow: 0px 0px 1.27907px rgba(0, 0, 0, 0.1), 0px 2.55814px 12.7907px rgba(0, 0, 0, 0.3);
 backdrop-filter: blur(55.63px);border-radius: 10px;">
 
-            <div style=" position:relative;height: 225px;width: 228px; left: 37px; top: 70px;border-radius: 50%;"><img src=" "  onchange="loadFile(event)"  id="imageDisplay" style="position:relative;top:-50px;height: 173px; width: 161px;border-radius: 50%; border:12px rgba(248, 200, 0, 0.56) solid"> </div>
+            <div style=" position:relative;height: 225px;width: 228px; left: 37px; top: 70px;border-radius: 50%;"><img src="/Nigeria-yellow-page-directory/assets/img/Woman Face.png"  onchange="loadFile(event)"  id="imageDisplay" style="position:relative;top:-50px;height: 173px; width: 161px;border-radius: 50%; border:12px rgba(248, 200, 0, 0.56) solid"> </div>
             <li name="string" id="string" style="display: none;"></li>
             <div style="position:relative;">
                 <p style="font-family:Ubuntu; height: 33px; width: 437px;font-size: 23px;font-style: normal;font-weight: 700;line-height: 27px;letter-spacing: 0px;text-align: left;height: 33px;color: #FFFFFF;">${userInfo[i].businessName} is live on NYC</p>
@@ -38,6 +38,30 @@ backdrop-filter: blur(55.63px);border-radius: 10px;">
     }
     document.getElementById("registration-form").innerHTML = userDetails
 }
+
+
+function manageAds() {
+    userDetails = " ";
+    for (i = 0; i < userInfo.length; i++) {
+        userDetails = `<div>
+
+        <h3 style="font-family: Ubuntu;  font-size: 20px;font-weight: bold;line-height: 23px;">Manage Ads</h3>
+        <div style="height: 275px; width: 968px; left:37px; top:25px; display:flex;align-items:center;background: #686868;
+        background: #686868;box-shadow: 0px 0px 1.27907px rgba(0, 0, 0, 0.1), 0px 2.55814px 12.7907px rgba(0, 0, 0, 0.3);
+backdrop-filter: blur(55.63px);border-radius: 10px;">
+
+            <div style=" position:relative;height: 225px;width: 228px; left: 37px; top: 70px;border-radius: 50%;"><img src="/Nigeria-yellow-page-directory/assets/img/Woman Face2.png "  onchange="loadFile(event)"  id="imageDisplay" style="position:relative;top:-50px;height: 173px; width: 161px;border-radius: 50%; border:12px rgba(248, 200, 0, 0.56) solid"> </div>
+            <li name="string" id="string" style="display: none;"></li>
+            <div style="position:relative; top:-60px">
+            <p style= "font-family:ubuntu;color: #F8C800; font-size: 22px; font-weight: 500; line-height: 25px;">Information : <span style="color:#fff ">No ads found</span></p>
+                  </div>
+        </div>
+
+    </div>`
+    }
+    document.getElementById("registration-form").innerHTML = userDetails
+}
+
 
 
 
@@ -117,36 +141,37 @@ function details() {
 
 
 function update(i) {
+    swal("Profile Updated", "!!!", "success")
+    let userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
-
-    alert(JSON.stringify(userInfo[i]))
+    // localStorage.setItem("updatedRecord", JSON.stringify(userInfo[i]))
+    // (JSON.stringify(userInfo[i]))
     let updateRecord = {
 
 
-        address: document.getElementById("business-address").innerText,
-        businessName: document.getElementById("business-name").innerText,
-        email: document.getElementById("email").innerText,
-        businessName: document.getElementById("Business Name").innerText,
-        location: document.getElementById("location").innerText,
-        number: document.getElementById("phone-Number").innerText,
-        fax: document.getElementById("fax").innerText,
-        website: document.getElementById("url").innerText,
-        textarea: document.getElementById("textarea").innerText,
-        city: document.getElementById("city").innerText
+        address: document.getElementById("business-address").value,
+        businessName: document.getElementById("business-name").value,
+        email: document.getElementById("email").value,
+        businessName: document.getElementById("Business Name").value,
+        location: document.getElementById("location").value,
+        number: document.getElementById("phone-Number").value,
+        fax: document.getElementById("fax").value,
+        website: document.getElementById("url").value,
+        textarea: document.getElementById("textarea").value,
+        city: document.getElementById("city").value
 
 
 
     }
 
     userInfo[i] = updateRecord;
-    localStorage.setItem("userInfo", (userInfo))
-        //localStorage.setItem("myStorage", JSON.stringify(generalUser));
+    localStorage.setItem("userInfo", JSON.stringify(userInfo[i]))
+
+    //localStorage.setItem("myStorage", JSON.stringify(generalUser));
 
     update(i)
 
 }
-
-
 
 function profileNAme() {
     nameDetail = " ";
@@ -207,8 +232,8 @@ function uploadDOc() {
                     </div>
                 </div>
             </div>
-            <div style="display: flex; gap: 190px">
-                <p id="accepted">Accepted File Types: .doc, .docx, .jpeg and .png</p>
+            <div style="display: flex; gap: 240px">
+                <p id="accepted">Accepted File Types: .jpeg and .png</p>
                 <p class="secured"><i style="margin: 0 5px;" class='fas fa-lock'></i>Secure </p>
             </div>
             <div style="margin-top: 40px;" class="form-group">
@@ -249,11 +274,37 @@ function getFile(e) {
         var img = document.getElementById("imageDisplay");
         img.src = string;
 
+
     }
     localStorage.setItem("userpics", JSON.stringify(string))
 }
 
+function imgSave() {
+    var elephant = document.getElementById("imageDisplay");
 
+    // Take action when the image has loaded
+    elephant.addEventListener("load", function() {
+        var imgCanvas = document.createElement("canvas"),
+            imgContext = imgCanvas.getContext("2d");
+        // alert(imgContext)
+        // Make sure canvas is as big as the picture
+        imgCanvas.width = elephant.width;
+        imgCanvas.height = elephant.height;
+
+        // Draw image into canvas element
+        imgContext.drawImage(elephant, 0, 0, elephant.width, elephant.height);
+
+        // Get canvas contents as a data URL
+        var imgAsDataURL = imgCanvas.toDataURL("image/png/jpeg/jpg");
+
+        // Save image into localStorage
+        try {
+            localStorage.setItem("elephant", imgAsDataURL);
+        } catch (e) {
+            console.log("Storage failed: " + e);
+        }
+    }, false);
+}
 
 function statTab() {
     userDetails = " ";
@@ -265,7 +316,7 @@ function statTab() {
                         <img src="/assets/img/Wcelebrate.png" alt=""> <br>
                         <number class="number">42,456</number>
                         <br> <br>
-                        <p>Total search <h4>Yellow Page Stats</h4>made on ${userInfo[i].businessName} <br> <br> 100 <span class="visitor">new visitors</span> for the new week</p>
+                        <p>Total search made <h4></h4>made on ${userInfo[i].businessName} <br> <br> 100 <span class="visitor">your business page</span></p>
                     </div>
                     <div class="right-top">
                         <!--  -->
@@ -275,9 +326,9 @@ function statTab() {
                 <div class="bottom-container">
                     <div class="left-bottom">
                         <img src="/assets/img/Man thumb.png" alt=""> <br>
-                        <number class="number" >42,456</number>
+                        <number class="number" >8,234</number>
                         <br> <br>
-                        <p>Total search made on ${userInfo[i].businessName} <br> <br> 120 <span class="visitor">new visitors</span> for the new week</p>
+                        <p>Total search made on ${userInfo[i].businessName} <br> <br> 120 <span class="visitor"> Events </span> you posted</p>
 
                     </div>
                     <div class="right-bottom">
