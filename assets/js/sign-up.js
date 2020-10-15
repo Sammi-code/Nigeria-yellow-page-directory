@@ -8,14 +8,13 @@
 // let website = document.getElementById("website").value;
 
 
-// getting form to local storage
+
 let userInfo = JSON.parse(localStorage.getItem("userInfo"));
 if (userInfo == null) {
     userInfo = []
 }
 const userForm = (e) => {
     e.preventDefault();
-    // setting all user input
     newUser = {
         businessName: document.getElementById("business-name").value,
         email: document.getElementById("email").value,
@@ -28,7 +27,9 @@ const userForm = (e) => {
     };
 
     userInfo.push(newUser);
-    // validating user input
+    var check_box = document.getElementById("check-box")
+
+
     if (newUser.businessName != '' &&
         newUser.email != '' &&
         newUser.password != '' &&
@@ -36,22 +37,15 @@ const userForm = (e) => {
         newUser.city != '' &&
         newUser.number != '' &&
         newUser.website != '') {
-        // you can change this directory when hosting
+            if(check_box.checked == true){
         location.assign("../contents/login.html")
-
+            }
+            else{
+                alert("Kindly accept the terms and conditions")
+            }
     } else {
-        swal(
-            // {
-            // title: "Kindly fill all input to continue",
-            // showCancelButton: false,
-            // confirmButtonText: "ok",
-            // confirmButtonColor: "red"
-            // cancelButtonColor: "red"
-            // }
-            "error", "Kindly fill all input to continue!", "error"
-        )
+        alert("Kindly fill all input to continue")
     }
-    // saving userinfo to local storage
     localStorage.setItem("userInfo", JSON.stringify(userInfo))
 };
 let registerButton = document.getElementById("register-btn")

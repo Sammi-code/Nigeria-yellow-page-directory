@@ -63,7 +63,13 @@ function search() {
       // If the keyword is not in the local storage 
       swal("This event is not currently available", "Check other events happening!", "warning");
 
-    } else {
+    } else{
+
+      if ( state == "" || show == ""){
+        swal("Error", "Fields cannot be empty", "warning");
+      }
+
+      else{
 
       // If the keyword is available in the local storage
       swal("Yes!", "Proceed to check about this event", "success");
@@ -73,15 +79,16 @@ function search() {
 
       setTimeout(() => {
         document.getElementById('findEvent').innerHTML = '';
-      }, 3800);
+      }, 3000);
 
       // Setting the events to the local Storage
       localStorage.setItem('saveEvents', JSON.stringify(stateObject));
 
       setTimeout(() => {
         window.location.assign('../contents/eventsearch.html');
-      }, 3500);
+      }, 3000);
     }
+  }
   }
 }
 
