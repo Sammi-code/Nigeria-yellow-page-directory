@@ -200,7 +200,7 @@ function details() {
         <input type="text" value="${userInfo[i].location}" id="location" placeholder="location">
         <iframe src="../assets/img/Horizontal Map.png" style="display:block; width: 650px ;height:200px;" frameborder="0" scrolling="no"></iframe>
         <br>
-        <div class="buttons ">
+        <div class="buttons">
             <button onclick="update(${i})" class="btn btn-lg btn-warning">Update My Info</button>
         </div>
 

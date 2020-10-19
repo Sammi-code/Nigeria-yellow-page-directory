@@ -213,7 +213,7 @@ nav .nav-item-2 .add-btn:hover {
 .sub-container button a {
     z-index: 1000;
     color: #212529 !important;
-    font-weight: 900;
+    font-weight: bold;
 }
 
 .sub-container h3 {
@@ -555,6 +555,8 @@ hr {
 
 .buttons {
     margin-top: 2rem;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .input {
