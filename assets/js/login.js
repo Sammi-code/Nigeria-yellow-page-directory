@@ -34,6 +34,12 @@ const signUser = (e) => {
     e.preventDefault();
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
+
+      //    Admin info
+
+    let adminEmail = "admin@gmail.com";
+    let adminPassword = "1234567";
+    
     let user = userInfo.find(
         // comparing if form meet with what is inside local storage
         element => email == element.email && password == element.password

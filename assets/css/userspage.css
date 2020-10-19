@@ -592,8 +592,9 @@ hr {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    margin-left: 3rem;
-    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-top: 6rem;
+    width: 1000px;
 }
 
 .top-container {
@@ -630,7 +631,7 @@ hr {
 }
 
 .right-top {
-    background: #FFFFFF;
+    background-image: url(../img/yellowchart.png);
     border-radius: 10px;
     transform: matrix(1, -0.01, -0.01, 1, 0, 0);
     -webkit-border-radius: 10px;
@@ -641,8 +642,10 @@ hr {
     -moz-transform: matrix(1, -0.01, -0.01, 1, 0, 0);
     -ms-transform: matrix(1, -0.01, -0.01, 1, 0, 0);
     -o-transform: matrix(1, -0.01, -0.01, 1, 0, 0);
-    margin-left: 10rem;
-    padding-left: 5rem;
+    margin-left: 2rem;
+    padding-left: 2rem;
+    width: 600px;
+    height: 400px;
 }
 
 .left-top,
@@ -650,8 +653,12 @@ hr {
     padding-left: 3rem;
 }
 
+.left-top{
+    margin-bottom: 4rem;
+}
+
 .right-bottom {
-    background: #FFFFFF;
+    background-image: url(../img/eventchart.png);
     border-radius: 10px;
     transform: matrix(1, -0.01, -0.01, 1, 0, 0);
     -webkit-border-radius: 10px;
@@ -662,9 +669,12 @@ hr {
     -moz-transform: matrix(1, -0.01, -0.01, 1, 0, 0);
     -ms-transform: matrix(1, -0.01, -0.01, 1, 0, 0);
     -o-transform: matrix(1, -0.01, -0.01, 1, 0, 0);
-    margin-left: 10rem;
-    padding-left: 5rem;
-    margin-top: 2em;
+    margin-left: 2rem;
+    padding-left: 2rem;
+    margin-top: -3rem;
+    margin-bottom: 2rem;
+    width: 600px;
+    height: 400px;
 }
 
 

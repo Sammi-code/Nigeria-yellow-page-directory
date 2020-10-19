@@ -16,21 +16,94 @@ function preventdefault(e) {
     e.preventDefault()
 }
 
+
+
+function updatePackage() {
+    userDetails = " ";
+    for (i = 0; i < userInfo.length; i++) {
+        userDetails = `
+        <div class="title">
+            <h3> Pricing </h3>
+            <p> Our prices are fashioned to cater for both the economical and others with taste, be rest assured payments are seamless and quick. </p>
+
+        </div>
+
+        <div class="pricing-table">
+            <div class="pricing-card">
+                <h3 class="pricing-card-header"> Free Trial</h3>
+                <div class="price"><sup>N</sup>0<span>/month</span></div>
+                <ul>
+                    <li><strong>1</strong> Advert per week (write-up)</li>
+                    <li><strong>No</strong> Monthly Analytic Report</li>
+                    <li>Review Listing</li>
+                    <li><strong>2</strong> Photos</li>
+                    <li><strong>No</strong> Video Advert</li>
+                </ul>
+                <a href="#" class="order-btn"> Select Plan</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3 class="pricing-card-header"> Regular</h3>
+                <div class="price"><sup>N</sup>5000<span>/month</span></div>
+                <ul>
+                    <li><strong>2</strong> Adverts per week (write-up)</li>
+                    <li>Monthly Analytic Report</li>
+                    <li>Review Listing</li>
+                    <li>Photo Gallery</li>
+                    <li><strong>No</strong> Video Advert</li>
+                </ul>
+                <a href="#" class="order-btn"> Select Plan</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3 class="pricing-card-header"> Premium</h3>
+                <div class="price"><sup>N</sup>10000<span>/month</span></div>
+                <ul>
+                    <li><strong>5</strong> Adverts per week</li>
+                    <li>Monthly Analytic Report</li>
+                    <li>Review Listing</li>
+                    <li>Photo Gallery</li>
+                    <li>Video Advert</li>
+                </ul>
+                <a href="#" class="order-btn"> Select Plan</a>
+            </div>
+
+
+
+
+        </div>`
+    }
+    document.getElementById("registration-form").innerHTML = userDetails
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function Notifications() {
     userDetails = " ";
     for (i = 0; i < userInfo.length; i++) {
         userDetails = `<div>
 
-        <h3 style="font-family: Ubuntu;  font-size: 20px;font-weight: bold;line-height: 23px;">Notification</h3>
+        <h3 style="font-family: Ubuntu; margin-top: 6rem; font-size: 18px; font-weight: bold;line-height: 23px;">Notification</h3>
         <div style="height: 275px; width: 968px; left:37px; top:25px; display:flex;align-items:center;background: #686868;
         background: #686868;box-shadow: 0px 0px 1.27907px rgba(0, 0, 0, 0.1), 0px 2.55814px 12.7907px rgba(0, 0, 0, 0.3);
 backdrop-filter: blur(55.63px);border-radius: 10px;">
 
-            <div style=" position:relative;height: 225px;width: 228px; left: 37px; top: 70px;border-radius: 50%;"><img src="/Nigeria-yellow-page-directory/assets/img/Woman Face.png"  onchange="loadFile(event)"  id="imageDisplay" style="position:relative;top:-50px;height: 173px; width: 161px;border-radius: 50%; border:12px rgba(248, 200, 0, 0.56) solid"> </div>
+            <div style=" position:relative;height: 225px;width: 228px; left: 37px; top: 70px;border-radius: 50%;"><img src="../assets/img/Woman Face.png"  onchange="loadFile(event)"  id="imageDisplay" style="position:relative;top:-50px;height: 173px; width: 161px;border-radius: 50%; border:12px rgba(248, 200, 0, 0.56) solid"> </div>
             <li name="string" id="string" style="display: none;"></li>
             <div style="position:relative;">
                 <p style="font-family:Ubuntu; height: 33px; width: 437px;font-size: 23px;font-style: normal;font-weight: 700;line-height: 27px;letter-spacing: 0px;text-align: left;height: 33px;color: #FFFFFF;">${userInfo[i].businessName} is live on NYC</p>
-                <h3 style="font-family: Ubuntu;font-style: normal;font-weight: 500; font-size: 18.0698px;  line-height: 21px;color: #FFFFFF;">Welcome. <br><br>All necessary and required messages and notifications would be fall in, Rpromos and offers also.</h3>
+                <h3 style="font-family: Ubuntu;font-style: normal;font-weight: 500; font-size: 18.0698px;  line-height: 21px;color: #FFFFFF;">Welcome. <br><br>All necessary and required messages and notifications would fall in here, promos and offers also.</h3>
             </div>
         </div>
 
@@ -40,17 +113,19 @@ backdrop-filter: blur(55.63px);border-radius: 10px;">
 }
 
 
-function manageAds() {
+
+
+function ManageAds() {
     userDetails = " ";
     for (i = 0; i < userInfo.length; i++) {
         userDetails = `<div>
 
-        <h3 style="font-family: Ubuntu;  font-size: 20px;font-weight: bold;line-height: 23px;">Manage Ads</h3>
+        <h3 style="font-family: Ubuntu;  margin-top: 6rem; font-size: 18px;font-weight: bold;line-height: 23px;">Manage Ads</h3>
         <div style="height: 275px; width: 968px; left:37px; top:25px; display:flex;align-items:center;background: #686868;
         background: #686868;box-shadow: 0px 0px 1.27907px rgba(0, 0, 0, 0.1), 0px 2.55814px 12.7907px rgba(0, 0, 0, 0.3);
 backdrop-filter: blur(55.63px);border-radius: 10px;">
 
-            <div style=" position:relative;height: 225px;width: 228px; left: 37px; top: 70px;border-radius: 50%;"><img src="/Nigeria-yellow-page-directory/assets/img/Woman Face2.png "  onchange="loadFile(event)"  id="imageDisplay" style="position:relative;top:-50px;height: 173px; width: 161px;border-radius: 50%; border:12px rgba(248, 200, 0, 0.56) solid"> </div>
+            <div style=" position:relative;height: 225px;width: 228px; left: 37px; top: 70px;border-radius: 50%;"><img src="../assets/img/WomanFace2.png"  onchange="loadFile(event)"  id="imageDisplay" style="position:relative;top:-50px;height: 173px; width: 161px;border-radius: 50%; border:12px rgba(248, 200, 0, 0.56) solid"> </div>
             <li name="string" id="string" style="display: none;"></li>
             <div style="position:relative; top:-60px">
             <p style= "font-family:ubuntu;color: #F8C800; font-size: 22px; font-weight: 500; line-height: 25px;">Information : <span style="color:#fff ">No ads found</span></p>
@@ -114,13 +189,11 @@ function details() {
         <select name="Location " id="location" value="${userInfo[i].location}"class="custom-select-md  mb-3">
             
                 <option value=" ">Location</option>
-                <option value="Lokoja ">Lokoja</option>
-                <option value="computer ">Kano</option>
-                <option value="Kano">kaduna</option>
-                <option value="Kastina">Kastina</option>
-                <option value="Zamfara  ">Zamfara </option>
+                <option value="Abuja">Abuja</option>
+                <option value="Kaduna">Kaduna</option>
+                <option value="Osun"> Osun </option>
                 <option value="Lagos">Lagos</option>
-                <option value="Agriculture">Agriculture</option>
+               
         </select>
         <input type="text" name="Address" id="business-address" placeholder="Address">
         <input type="url" value="${userInfo[i].website}" name="url" id="url" placeholder="url ">
@@ -183,6 +256,7 @@ function profileNAme() {
         nameDetail.toUpperCase()
     }
 
+
 }
 profileNAme()
 
@@ -218,8 +292,9 @@ function uploadDOc() {
                 <div class="fine" id="fine" style=" height:  318px;background:#ebebe0 ">
 
 
-                    <div class="custom-file">
-                        <input style=" height:318px  " type="file" class="custom-file-input" name="filename" id="customFile" accept="image/gif, image/jpeg, image/png , .doc, .docx, .jpeg,.png">
+                    <div class="custom-file"  id="change">
+                        <input style=" height:318px  " type="file" class="custom-file-input"   onclick="getFile()"
+                        name="filename" id="customFile" accept="image/gif, image/jpeg, image/png , .doc, .docx, .jpeg,.png">
 
                     </div>
 
@@ -250,7 +325,7 @@ function uploadDOc() {
 }
 
 function usersbutton() {
-    document.getElementById("upload").innerHTML = `<img src ="/Nigeria-yellow-page-directory/assets/img/ajax-loader (1).gif"> Updating..`
+    document.getElementById("upload").innerHTML = `<img src ="..assets/img/ajax-loader (1).gif"> Updating..`
 
 
     setTimeout(() => {
@@ -259,52 +334,31 @@ function usersbutton() {
 }
 
 
-function getFile(e) {
-    var formInput = document.getElementById("customFile");
-    var filename = formInput.value;
-
-    var fr = new FileReader();
-    //fr.readAsBinaryString(formInput.files[0]);
-    fr.readAsDataURL(formInput.files[0]);
-    fr.onloadend = function(e) {
-        var string = e.target.result;
-        //  var liEle = document.getElementById("string")
-        //  liEle.innerHTML = bin;
-
-        var img = document.getElementById("imageDisplay");
-        img.src = string;
 
 
-    }
-    localStorage.setItem("userpics", JSON.stringify(string))
+function getFile() {
+
+    document.querySelector("#customFile").addEventListener("change", function() {
+        const reader = new FileReader()
+
+        reader.addEventListener("load", () => {
+
+            localStorage.setItem("StoreImages", reader.result)
+
+        })
+        reader.readAsDataURL(this.files[0])
+    })
+
+
 }
 
-function imgSave() {
-    var elephant = document.getElementById("imageDisplay");
 
-    // Take action when the image has loaded
-    elephant.addEventListener("load", function() {
-        var imgCanvas = document.createElement("canvas"),
-            imgContext = imgCanvas.getContext("2d");
-        // alert(imgContext)
-        // Make sure canvas is as big as the picture
-        imgCanvas.width = elephant.width;
-        imgCanvas.height = elephant.height;
 
-        // Draw image into canvas element
-        imgContext.drawImage(elephant, 0, 0, elephant.width, elephant.height);
-
-        // Get canvas contents as a data URL
-        var imgAsDataURL = imgCanvas.toDataURL("image/png/jpeg/jpg");
-
-        // Save image into localStorage
-        try {
-            localStorage.setItem("elephant", imgAsDataURL);
-        } catch (e) {
-            console.log("Storage failed: " + e);
-        }
-    }, false);
+function save() {
+    let c = localStorage.getItem("StoreImages")
+    document.getElementById("imageDisplay").src = c
 }
+
 
 function statTab() {
     userDetails = " ";
@@ -316,19 +370,19 @@ function statTab() {
                         <img src="/assets/img/Wcelebrate.png" alt=""> <br>
                         <number class="number">42,456</number>
                         <br> <br>
-                        <p>Total search made <h4></h4>made on ${userInfo[i].businessName} <br> <br> 100 <span class="visitor">your business page</span></p>
+                        <p>Total search <h4>Yellow Page Stats</h4>made on ${userInfo[i].businessName} <br> <br> 100 <span class="visitor">new visitors</span> for the new week</p>
                     </div>
                     <div class="right-top">
                         <!--  -->
-                        <img src="/assets/img/gan.jpeg" alt="">
+                        <img src="../assets/img/yellowchart" alt="">
                     </div>
                 </div>
                 <div class="bottom-container">
                     <div class="left-bottom">
                         <img src="/assets/img/Man thumb.png" alt=""> <br>
-                        <number class="number" >8,234</number>
+                        <number class="number" >42,456</number>
                         <br> <br>
-                        <p>Total search made on ${userInfo[i].businessName} <br> <br> 120 <span class="visitor"> Events </span> you posted</p>
+                        <p>Total search made on <br>${userInfo[i].businessName} <strong>Events</strong> <br> 120 <span class="visitor">new visitors</span> for the new week</p>
 
                     </div>
                     <div class="right-bottom">

@@ -12,6 +12,7 @@
     <!-- Style CSS -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="../assets/css/userspage.css">
+    <link rel="stylesheet" href="../assets/css/updateprice.css"> </link>
 
     <title>Naija Yellow Catalogue | User Page</title>
 </head>
@@ -46,7 +47,7 @@
     <div class="general-container">
         <div class="main-container">
             <div class="sub-container">
-                <input type="image" onchange="loadFile(event)" ondrop="imgSave()" src="/Nigeria-yellow-page-directory/assets/img/arimoro.jpeg" draggable="true" ondragstart="drag(event)" class="imageDisplay" id="imageDisplay">
+                <input type="image" ondrop="imgSave()" onload="save()" src="../assets/img/arimoro.jpeg" draggable="true" ondragstart="drag(event)" class="imageDisplay" id="imageDisplay">
                 <h3 id="h3" style=" font-weight:900;font-family:ubuntu">Hi ANONYMOUS</h3>
                 <button type="button" class="btn btn-default btn-block"><a href="#">View Profile</a></button>
                 <li name="string" id="string" style="display: none;"></li>
@@ -56,13 +57,14 @@
             <div class="list-group">
 
                 <button type="button" onClick="details()" class="list-group-item list-group-item-action"><img src="../assets/img/edit.svg" class="svg" width="30px" alt=""><a onclick="preventdefault(event)" href="">Edit record</a></button>
-                <button type="button" class="list-group-item list-group-item-action"><img class="svg" src="..assets/img/rating.svg" alt=""><a href="# ">Select/Update Package</a></button>
+                <button type="button" onclick="updatePackage()" class="list-group-item list-group-item-action"><img class="svg" src="../assets/img/package.svg  " alt=""><a href="# ">Select/Update Package</a></button>
                 <button type="button" onclick="statTab()" class="list-group-item list-group-item-action"> <img class="svg" src="../assets/img/stats.svg" alt=""><a href="# ">Stats</a></button>
-                <button type="button" onClick="manageAds()" class="list-group-item list-group-item-action"> <img class="svg" src="../assets/img/management.svg" alt=""><a onclick="preventdefault(event)" href="# ">Manage Ads</a></button>
-                <button type="button" onclick="uploadDOc() " class="list-group-item list-group-item-action "><img class="svg" src="../assets/img/flags.svg" alt=""><a onclick="preventdefault(event)" href="# ">Upload Documents</a></button>
+                <button type="button" onclick="ManageAds()" class="list-group-item list-group-item-action"> <img class="svg" src="../assets/img/management.svg" alt=""><a onclick="preventdefault(event)" href="# ">Manage Ads</a></button>
+                <button type="button" class="list-group-item list-group-item-action "> <img class="svg" src="../assets/img/Celebrate.svg" alt=""><a href="# ">Events</a></button>
+                <button type="button" onclick="uploadDOc() " class="list-group-item list-group-item-action "><img class="svg" src="../assets/img/upload.svg" alt=""><a onclick="preventdefault(event)" href="# ">Upload Documents</a></button>
                 <button type="button" onclick="Notifications()" class="list-group-item list-group-item-action"><img class="svg" src="../assets/img/notification.svg" alt=""><a href="# ">Notifications/ Inbox</a></button>
-                <button type="button" class="list-group-item list-group-item-action "> <img class="svg" src="../assets/img/flags.svg" alt=""><a href="# ">Settings</a></button>
-                <button type="button" onClick="logout()" class="list-group-item list-group-item-action "> <img class="svg" src="../assets/img/logout.svg"><a onclick="preventdefault(event)"href="# ">logout</a></button>
+                <button type="button" class="list-group-item list-group-item-action "> <img class="svg" src="../assets/img/settings.svg" alt=""><a href="# ">Settings</a></button>
+                <button type="button" onclick="logout()" class="list-group-item list-group-item-action "> <img class="svg" src="../assets/img/logout.svg"><a onclick="preventdefault(event)"href="# ">logout</a></button>
             </div>
         </div>
         <div class="registration-form " id="registration-form">
