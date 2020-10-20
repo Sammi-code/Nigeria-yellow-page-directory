@@ -177,13 +177,54 @@ function createEvents(){
     for (i = 0; i < userInfo.length; i++) {
         userDetails = `<div>
         <style>
+        *{
+            box-sizing:border-box;
+        }
         @import url('https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Ubuntu&display=swap');
         font-family:'Ubuntu',sans-serif;
+        .form-root{
+            display:flex;
+            flex-wrap:wrap;
+            
+        }
+        .name-side .date-side {
+            float:left;
+        }
+        .location-side {
+            position:absolute;
+            left:450px;
+            top:166px;
+        }
+        .file-side{
+            position:absolute;
+            left:450px;
+            top:256px;
+        }
+        .btn-side{
+            position:absolute;
+            left:290px;
+            
+        }
+        #text-side {
+            border:1px solid #C4C4C4 !important;
+            width:850px !important; 
+            height:200px; 
+            padding:5px;  
+            margin-bottom: 1rem; 
+            border-radius:5px; 
+            color:#7B7B7B; 
+            font-size:15px; 
+            outline:none !important;
+            // border:1px solid #7B7B7B;
+        }
         </style>
-        <h3 style="margin-top: 2rem; font-size: 16px;line-height: 26px;">Events</h3>
+        <h3 style="margin-top: 2rem; font-size: 16px;line-height: 26px; font-weight:bold;">Events</h3>
         <h1 style="margin-top: 2.5rem; margin-bottom: 2.7rem; font-size: 20px;font-weight: bold;line-height: 26px; color:#000;">Create Event</h1>
-        <div>
-        <input style="width:400px; height:50px; margin-bottom: 1rem; border-radius:5px; color:#7B7B7B; font-size:15px; border:1px solid #C4C4C4;" type="text" name="name" id="name" placeholder="Event Name" required >
+        <div class="form-root">
+        <div class="name-side">
+        <input class="first-side" style="width:400px; height:50px; margin-bottom: 1rem; border-radius:5px; color:#7B7B7B; font-size:15px; border:1px solid #C4C4C4;" type="text" name="name" id="name" placeholder="Name" required >
+       </div>
+       <div class="location-side">
         <select name="Location" id="location"   style="width:400px;  margin-bottom: 1rem; left:864px; height:50px; border-radius:5px; color:#7B7B7B; font-size:15px; border:1px solid #C4C4C4;">
         <option value="location">&nbsp; Location</option>
         <option value="lagos">Lagos</option>
@@ -193,18 +234,24 @@ function createEvents(){
         <option value="osun">Osun</option>
         <option value="imo">Imo</option>
         <option value="benin">Benin</option>
-     </select> <br>
-        <input style="width:400px; height:50px;  margin-bottom: 1rem; border-radius:5px; color:#7B7B7B; font-size:15px; border:1px solid #C4C4C4;" type="date" name="date" id="date" placeholder="Date" required >
-        <input type="text" name="file" id="file"  margin-bottom: 1rem; placeholder="Flyer/Poster/Picture" class="inputfile" style="width:282px;  margin-bottom: 1rem; height:50px; border-radius:5px; color:#7B7B7B; font-size:15px; border:1px solid #C4C4C4;" type="file" /> <button for="file" style="width:123px; margin-left:-10px; height:50px; border-radius:5px; background-color:#F8C800; color:#000; border:none; ">Choose a file</button><br>
-        <textarea style="width:400px; height:200px; padding:5px;  margin-bottom: 1rem; border-radius:5px; color:#7B7B7B; font-size:15px; border:1px solid #7B7B7B;" name="describe" id="event-description" placeholder="Event Description" required></textarea>
-            <button onclick= "goToDetails()" style="width:99px; height:53px; border-radius:10px; background-color:#F8C800; color:#000; border:none; font-weight:bolder;">Create</button>  
-            </div>
+     </select> 
+     </div>
+     <br>
+     <div class="date-side">
+     <input  style="width:400px; height:50px;  margin-bottom: 1rem; border-radius:5px; color:#7B7B7B; font-size:15px; border:1px solid #C4C4C4;" type="date" name="date" id="date" placeholder="Date" required >
+     </div>
+     <div class="file-side">   
+     <input type="text" name="file" id="file"  margin-bottom: 1rem; placeholder="Flyer/Poster/Picture" class="inputfile" style="width:282px;  margin-bottom: 1rem; height:50px; border-radius:5px; color:#7B7B7B; font-size:15px; border:1px solid #C4C4C4;" type="file" /> <button for="file" class="btn-side" style="width:123px; margin-left:-10px; height:50px; border-radius:5px; background-color:#F8C800; color:#000; border:none; ">Choose a file</button><br>
+      </div>  
+     <textarea id="text-side"  name="describe" id="event-description">Event Description</textarea>
+            <button onclick="goToDetails()" style="width:99px; height:53px; border-radius:10px; background-color:#F8C800; color:#000; border:none; font-weight:bolder;">Create</button>  
         </div>
     
     </div>`
 }
  document.getElementById("registration-form").innerHTML = userDetails
 }
+
 
 function goToDetails(){
     userDetails = " ";
