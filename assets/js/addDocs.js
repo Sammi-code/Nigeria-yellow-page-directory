@@ -48,22 +48,22 @@ function addDocs() {
                   <label for="recipient-name" class="col-form-label" style=" color:#8f8f8f; ">Attach Document</label>
                   <div style=" height:230px; border-radius:5px; border:3px dashed #c4c4c4; " class="custom-file">
                   <div class="custom-file"  id="change">
-                    <input id="uploadDoc" type="file" onchange="displayImage(event)"  style="height:250px; width:600px; cursor:pointer;" class="custom-file-input" name="filename" id="customFile" accept="image/gif, image/jpeg, image/png , .pdf , .jpeg,.png">
+                    <input id="uploadDoc" type="file"  onchange="imageLoader(event)"  style="height:250px; width:600px; cursor:pointer;" class="custom-file-input" name="filename" id="customFile" accept="image/gif, image/jpeg, image/png , .pdf , .jpeg,.png">
                   </div> 
                   <div style="width:600px; height:230px;" >
                   <img src="" id="document" style="width:430px; height:220px; margin-left:15px; margin-top:-35px; display:none;">
                   <div id="picCont">
-                    <i  class="fas fa-file-upload picCont"  style="text-align:center; color:#c4c4c4; font-size:90px; margin-left:200px; margin-top:-23px; margin-bottom:10px; "></i>
+                    <i  class="fas fa-file-upload picCont"  style="text-align:center; color:#c4c4c4; font-size:90px; margin-left:190px; margin-top:-23px; margin-bottom:10px; "></i>
                             
-                            <p class="picCont" style="text-align:center; color:#8f8f8f; margin-left:-120px; " >Drag or drop here</p>
-                            <p class="picCont" style="text-align:center; color:#8f8f8f; margin-left:-120px; " >Or</p>
-                            <p class="picCont" style="text-align:center; color:#8f8f8f; margin-left:-120px; " >Browse files</p>
+                            <p class="picCont" style="text-align:center; color:#8f8f8f; margin-left:-140px; " >Drag or drop here</p>
+                            <p class="picCont" style="text-align:center; color:#8f8f8f; margin-left:-140px; " >Or</p>
+                            <p class="picCont" style="text-align:center; color:#8f8f8f; margin-left:-140px; " >Browse files</p>
                             </div
                    </div>
                     
                   </div>
                   </div>
-                  <label for="message-text" class="col-form-label" style=" font-size:14px; color:#c4c4c4; ">Accepted file types : .pdf, .jpeg, .jpg, .png &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><i class="fas fa-lock" style="color:#c4c4c4;"> </i> Secure </span></label>
+                  <label for="message-text" class="col-form-label" style=" font-size:14px; color:#c4c4c4; ">Accepted file types : .jpeg, .jpg, .png &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><i class="fas fa-lock" style="color:#c4c4c4;"> </i> Secure </span></label>
                   
                   <div class="form-group">
                     <label for="message-text" class="col-form-label">Description</label>
@@ -100,6 +100,27 @@ function displayImage(event){ // display selected image function
       } 
     }
     
+    function previewFile() {
+      const preview = document.querySelector('img');
+      const file = document.querySelector('input[type=file]').files[0];
+      const reader = new FileReader();
+    
+      reader.addEventListener("load", function () {
+        // convert image file to base64 string
+        imgSrc = preview.src
+        imgSrc = reader.result;
+        
+      }, false);
+    
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    }
+//putting both functions into a single function
+function imageLoader(event) {
+  displayImage(event)
+  previewFile()
+}
 
 //saving the details gotten into the local storage
 userDocument = JSON.parse(localStorage.getItem("user"))
@@ -112,7 +133,7 @@ function uploadedDocs(){
 
     newDocument = {
         "title" : document.getElementById("title").value,
-        "image" : document.getElementById("uploadDoc").value,
+        "image" : imgSrc,
         "description" : document.getElementById("description").value
     }
          if(userDocument.length <= 5){
@@ -148,7 +169,7 @@ function  displayDocument() {
           }
               .box-pack {
                margin-bottom:40px;
-               margin-left:190px;
+               margin-left:170px;
             }
              
               .boxes{
@@ -164,15 +185,15 @@ function  displayDocument() {
                   
               }
           </style>
-         <div class="box-pack">
-              <div class="boxes " >
-                  <div style="background-color:#F8C800; color:white;">
+         <div class="box-pack card-group">
+              <div class="boxes card " >
+                  <div class=" card-header" style="background-color:#F8C800; color:white;">
                       <strong>${userDocument[i].title}</strong> 
                   </div>
-                  <div style="height:200px;">
-                      <img src="${userDocument[i].image}" class="card-img-top" alt="Card image cap">
+                  <div  class=" card-body" style="height:300px;">
+                      <img src="${userDocument[i].image}" class="card-img-top" alt="Card image cap" style="height:280px; padding:10px;">
                   </div>
-                  <div style="background-color:#F8C800; color:white; margin-bottom:7px;">
+                  <div class=" card-footer" style="background-color:#F8C800; color:white; ">
                       ${userDocument[i].description} <br> 
                   </div>
                   <button id="delete-btn" onclick="deleteDoc(${i})" ><i class="fas fa-trash-alt" style="  text-align:center; "></i></button>

@@ -8,7 +8,7 @@ function findBusiness() {
   
   if (usersObject == false) {
     // If the keyword is not in the local storage 
-    alert("This Business is not valid", "Check for other Businesses!", "warning");
+    swal("This Business is not valid", "Check for other Businesses!", "warning");
 
   } else {
 
@@ -17,18 +17,18 @@ function findBusiness() {
     if (stateObject == false) {
 
       // If the keyword is not in the local storage 
-      alert("This Business is not valid", "Check for other Businesses!", "warning");
+      swal("This Business is not valid", "Check for other Businesses!", "warning");
 
     } else {
 
       if ( business == "" || cat == "" || loc == "") {
-        alert("Error", "Fields cannot be empty", "warning");
+        swal("Error!", "Fields cannot be empty", "warning");
       }
 
       else{
 
         // If the keyword is available in the local storage
-        alert("Yes!", "Proceed to check about this Restaurant", "success");
+        swal("Yes!", "Proceed to check about this Business", "success");
   
         // AJAX Loader that loads the new page
         document.getElementById('findBus').innerHTML = '<img src="../assets/img/ajax-loader.gif"> ';
@@ -53,7 +53,7 @@ function findBusiness() {
 function recoverSearch() {
   searchResults = JSON.parse(localStorage.getItem("saveBusiness"));
   if (searchResults == false) {
-    alert(`Error`);
+    swal("Error!", "Details not found", "warning");
   } else {
     displaySearch(searchResults);
   }

@@ -68,9 +68,9 @@ function details() {
             <h2>Location <span class="glyphicion-box "></span></h2>
 
         </div>
-        <select name="Location" id="city" value="${userInfo[i].city}" class="custom-select-md  mb-3">
-        ${userInfo[i].city}
-                <option value="${userInfo[i].city} " selected> ${userInfo[i].city}</option>
+        <select name="Location" id="city" value="${userInfo[i].location}" class="custom-select-md  mb-3">
+        ${userInfo[i].location}
+                <option value="${userInfo[i].location} " selected> ${userInfo[i].location}</option>
                 <option value="Abuja">Abuja</option>
                 <option value="Kaduna">Kaduna</option>
                 <option value="Osun"> Osun </option>
@@ -96,7 +96,7 @@ function details() {
         
 
         <input type="url" value="${userInfo[i].website}" name="url" id="url" placeholder="url ">
-        <input type="text" value="${userInfo[i].location}" id="location" placeholder="location">
+        <input type="text" value="${userInfo[i].city}" id="location" placeholder="location">
         <iframe width="655" height="248" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=1200&amp;height=482.89&amp;hl=en&amp;q=Ahmadu%20Bello%20Way,%20Gudu,%20Abuja.%20Abuja+(Iya%20basira)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> 
         <script type='text/javascript' src='https://maps-generator.com/google-maps-authorization/script.js?id=7aae1220f31cf23af612333f366ae8678d266437'></script>
         <br>
