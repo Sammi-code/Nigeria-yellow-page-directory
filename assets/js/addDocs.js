@@ -17,15 +17,15 @@ function addDocs() {
         <p style="color:white;">A <abbr title="Corporate Affairs Commission">CAC</abbr> Certificate and a maximum of 5 pictures is needed to verify your business.</p>
         </div>
             </div>
-        <br> <br>
-            <!-- Button trigger modal -->
-<button style="width:200px; height:53px; border:none; border-radius:10px; background-color:#F8C800; color:#000; box-shadow:#686868; font-weight:bolder;" type="button" id= "main-btn" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-    Upload Document
-  </button>
-  <button onclick="displayDocument()" style="width:200px; margin-left:440px; height:53px; border:none; border-radius:10px; background-color:#F8C800; color:#000; box-shadow:#686868; font-weight:bolder;" type="button" id= "main-btn" class="btn btn-primary" >
-    View Document
-  </button>
-  <br><br>
+        
+        <!-- Button trigger modal -->
+        <button style="width:180px; height:53px; border:none; color:white; border-radius:10px; background-color:#F8C810 !important; box-shadow:#686868;  padding:1px !important; font-weight:bolder;" type="button" id= "main-btn" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+            Upload Document
+        </button>
+        <button onclick="displayDocument()" style="width:180px; color:white; margin-left:30px; height:53px; border:none; border-radius:10px; background-color:#F8C810 !important; padding:1px !important;  box-shadow:#686868; font-weight:bolder;" type="button" id= "main-btn" class="btn btn-primary" >
+            View Document
+        </button>
+          <br><br>
  
 
   <!-- Modal -->
@@ -48,7 +48,7 @@ function addDocs() {
                   <label for="recipient-name" class="col-form-label" style=" color:#8f8f8f; ">Attach Document</label>
                   <div style=" height:230px; border-radius:5px; border:3px dashed #c4c4c4; " class="custom-file">
                   <div class="custom-file"  id="change">
-                    <input id="uploadDoc" type="file" onchange="displayImage(event)" style="height:250px; width:600px; cursor:pointer;" class="custom-file-input" name="filename" id="customFile" accept="image/gif, image/jpeg, image/png , .pdf , .jpeg,.png">
+                    <input id="uploadDoc" type="file" onchange="displayImage(event)"  style="height:250px; width:600px; cursor:pointer;" class="custom-file-input" name="filename" id="customFile" accept="image/gif, image/jpeg, image/png , .pdf , .jpeg,.png">
                   </div> 
                   <div style="width:600px; height:230px;" >
                   <img src="" id="document" style="width:430px; height:220px; margin-left:15px; margin-top:-35px; display:none;">
@@ -99,6 +99,7 @@ function displayImage(event){ // display selected image function
         picCont.style.display = "none";
       } 
     }
+    
 
 //saving the details gotten into the local storage
 userDocument = JSON.parse(localStorage.getItem("user"))
@@ -133,33 +134,57 @@ function uploadedDocs(){
 
 //displaying the information from the local storage
 function  displayDocument() {
-    if(userDocument.length == [] ){
-        swal("", "You have not uploaded any document", "error")
-    }
-    else {
-         for (i = 0; i < userDocument.length; i++) {
-            userDetails += 
-     `  
-            <div class="card-deck" style=" width:600px; text-align:center; margin-bottom:30px; margin-left:150px;">
-                <div class="card" style="margin-top:50px; ">
-                    <div class="card-header ">
-                        <strong>${userDocument[i].title}</strong> 
-                    </div>
-                    <div class="card-body ">
-                        <img src="${userDocument[i].image}" class="card-img-top" alt="Card image cap">
-                    </div>
-                    <div class="card-footer">
-                        ${userDocument[i].description} <br> <br>
-                    </div>
-                    <button id="delete-btn" onclick="deleteDoc(${i})" ><i class="fas fa-trash-alt" style="text-align:center;"></i></button>
+  if(userDocument.length == [] ){
+      swal("", "You have not uploaded any document", "error")
+  }
+  else {
+      userDetails = ' <p style="color:#F8C800; font-size:18px; cursor:pointer;" onclick="addDocs()"><i class="fas fa-long-arrow-alt-left"></i> Go back to upload page</p><br><br> '
+       for (i = 0; i < userDocument.length; i++) {
+          userDetails += `
+     
+          <style>
+          #registration-form{
+            display:inline-block;
+          }
+              .box-pack {
+               margin-bottom:40px;
+               margin-left:190px;
+            }
+             
+              .boxes{
+                  
+                  text-align: center;
+                  border:1px lightgray solid;
+                  box-shadow: gray 1px 2px 0 2px;
+                  padding: 10px;
+                  width:500px;
+                  border-radius: 10px;
+                  color: black;
+                  
+                  
+              }
+          </style>
+         <div class="box-pack">
+              <div class="boxes " >
+                  <div style="background-color:#F8C800; color:white;">
+                      <strong>${userDocument[i].title}</strong> 
                   </div>
-            
-        </div>`
-    }
+                  <div style="height:200px;">
+                      <img src="${userDocument[i].image}" class="card-img-top" alt="Card image cap">
+                  </div>
+                  <div style="background-color:#F8C800; color:white; margin-bottom:7px;">
+                      ${userDocument[i].description} <br> 
+                  </div>
+                  <button id="delete-btn" onclick="deleteDoc(${i})" ><i class="fas fa-trash-alt" style="  text-align:center; "></i></button>
+              </div>
+          
+      </div>`
+  }
 }
-    
-    document.getElementById("registration-form").innerHTML = userDetails
+  
+  document.getElementById("registration-form").innerHTML = userDetails
 }
+
 //deleting a document
 function deleteDoc(i) {
 

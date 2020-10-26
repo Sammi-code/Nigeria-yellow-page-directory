@@ -258,8 +258,6 @@ nav .nav-item-2 .add-btn:hover {
     text-transform: capitalize;
     color: #3A4151;
     background: transparent;
-    
-    
 }
 
 .list-group-item i {
@@ -308,11 +306,9 @@ nav .nav-item-2 .add-btn:hover {
     outline: hidden;
 }
 
-
 .list-group a:hover {
     color: #EBBA32;
 }
-
 
 
 /* .list-group-item:hover {
@@ -520,6 +516,7 @@ input[placeholder],
     flex-wrap: wrap;
 }
 
+
 /* form input,
 form select,
 textarea {
@@ -660,7 +657,7 @@ hr {
     padding-left: 3rem;
 }
 
-.left-top{
+.left-top {
     margin-bottom: 4rem;
 }
 

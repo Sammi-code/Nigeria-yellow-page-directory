@@ -65,7 +65,7 @@ function displaySearch(arr) {
   for (j = 0; j < arr.length; j++) {
     document.getElementById('valueOne').value = arr[j].businessName;
     document.getElementById('valueTwo').value = arr[j].category;
-    document.getElementById('valueThree').value = arr[j].locations;
+    document.getElementById('valueThree').value = arr[j].location;
 
       
       searchContent +=

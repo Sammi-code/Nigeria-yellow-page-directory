@@ -1,5 +1,11 @@
 function logout() {
+    // let c = userInfo.pop();
+    let currentUser = localStorage.getItem("currentUser")
+        // currentUser = currentUser.pop(currentUser)
+    localStorage.removeItem("currentUser", currentUser);
     location.assign("../index.html")
+    document.getElementById('body').style.display = 'none';
+
 
 }
 
@@ -10,6 +16,9 @@ let userInfo = JSON.parse(localStorage.getItem("userInfo"));
 function preventdefault(e) {
     e.preventDefault()
 }
+
+
+
 
 
 function details() {
@@ -51,32 +60,48 @@ function details() {
         <input type="text " style="color:black; background:grey" disabled  value="${userInfo[i].businessName}" id="Business Name" placeholder="Business Name ">
         <input type="email" style="color:black; background:grey" disabled value="${userInfo[i].email}"id="email" placeholder="Email ">
         <input type="text" value="${userInfo[i].number}" id="phone-Number" placeholder="Phone-Number">
-        <input type="text"  value="" name="Fax" id="Fax" placeholder="Fax">
+        <input type="text"  value="${userInfo[i].fax}" name="Fax" id="Fax" placeholder="Fax">
         <input type="password"  hidden disabled value="${userInfo[i].password}" name="password " id="password" placeholder="password">
-        <textarea name="" id="textarea1" class="textarea1" cols="90" placeholder="short-description" rows="10"></textarea>
+        <textarea name="" id="textarea1" class="textarea1" cols="90" placeholder="short-description" value="${userInfo[i].textarea}" rows="10">${userInfo[i].textarea}</textarea>
 
         <div class="location" style="width: 100%;">
             <h2>Location <span class="glyphicion-box "></span></h2>
 
         </div>
-        <select name="Location" id="city" value="" class="custom-select-md  mb-3">
-       
-                <option value=" "> ${userInfo[i].location}</option>
+        <select name="Location" id="city" value="${userInfo[i].city}" class="custom-select-md  mb-3">
+        ${userInfo[i].city}
+                <option value="${userInfo[i].city} " selected> ${userInfo[i].city}</option>
                 <option value="Abuja">Abuja</option>
                 <option value="Kaduna">Kaduna</option>
                 <option value="Osun"> Osun </option>
                 <option value="Lagos">Lagos</option>
                
         </select>
-        <input type="text" value="${userInfo[i].category}" name="Address" id="business-address" placeholder="Category">
+
+        <select name="category" id="busCategory">${userInfo[i].category}
+        <option value="${userInfo[i].category}"  selected >${userInfo[i].category}</option>
+        <option>Real Estate/Property</option>
+        <option>Beauty & Fashion</option>
+        <option>Technology</option>
+        <option>Catering & Decoration</option>
+        <option>Agriculture</option>
+        <option>Restaurant</option>
+        <option>Construction and Renovation</option>
+        <option>Transportation</option>
+        <option>News & Media</option>
+        <option>Health and Fitness</option>
+        <option>Education & Schools</option>
+        <option>Electronics</option>
+    </select>
+        
+
         <input type="url" value="${userInfo[i].website}" name="url" id="url" placeholder="url ">
-        <input type="text" value="${userInfo[i].city}" id="location" placeholder="location">
-        <iframe width="659" height="248" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=1200&amp;height=482.89&amp;hl=en&amp;q=Ahmadu%20Bello%20Way,%20Gudu,%20Abuja.%20Abuja+(Iya%20basira)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> 
+        <input type="text" value="${userInfo[i].location}" id="location" placeholder="location">
+        <iframe width="655" height="248" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=1200&amp;height=482.89&amp;hl=en&amp;q=Ahmadu%20Bello%20Way,%20Gudu,%20Abuja.%20Abuja+(Iya%20basira)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> 
         <script type='text/javascript' src='https://maps-generator.com/google-maps-authorization/script.js?id=7aae1220f31cf23af612333f366ae8678d266437'></script>
         <br>
         <div class="buttons ">
-    
-            <button onclick="update(${i})" class="btn btn-primary">Update My Info</button>
+            <button onclick="update(${i})" onload="usersbutton()" id ="butttons" class="btn btn-lg btn-warning">Update My Info</button>
         </div>
 
     </form>
@@ -86,7 +111,8 @@ function details() {
     }
 }
 
-details() 
+
+details()
 
 function getFile() {
 
@@ -117,34 +143,44 @@ function save() {
 
 
 function update() {
-    // if (confirm) {
+
     let userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
     let updateRecord = {
-        businessName: document.getElementById("business-name").value,
-        email: document.getElementById("email").value,
-        password: document.getElementById("password").value,
-        category: document.getElementById("busCategory").value,
-        location: document.getElementById("location").value,
-        city: document.getElementById("city").value,
-        number: document.getElementById("number").value,
-        website: document.getElementById("website").value,
-        fax: document.getElementById("Fax"),
-        textarea: document.getElementById("textarea"),
-        imagesource: localStorage.getItem("StoreImages")
+            category: document.getElementById("busCategory").value,
+            email: document.getElementById("email").value,
+            businessName: document.getElementById("Business Name").value,
+            location: document.getElementById("location").value,
+            number: document.getElementById("phone-Number").value,
+            fax: document.getElementById("Fax").value,
+            website: document.getElementById("url").value,
+            textarea: document.getElementById("textarea1").value,
+            city: document.getElementById("city").value,
+            password: document.getElementById("password").value,
 
-    }
+
+            imagesources: document.getElementById("imageDisplay").src
+        }
+        // 
     userInfo[i] = updateRecord
-
+        // alert(JSON.stringify(userInfo[i]))
     localStorage.setItem("userInfo", JSON.stringify(userInfo))
 
 
+    document.getElementById("butttons").innerHTML = `<img src="/assets/img/ajax-loader.gif"> &nbsp  Updating..`
 
+
+    setTimeout(() => {
+        document.getElementById("butttons").innerHTML = `Update My Info`
+    }, 5000)
 
     swal("Profile Updated", "!!!", "success")
 
-
 }
+
+
+
+
 
 
 
@@ -156,39 +192,11 @@ function profileNAme() {
     for (i = 0; i < userInfo.length; i++) {
 
 
-        nameDetail = document.getElementById("Name").innerHTML = `${userInfo[i].businessName}`
-        nameDetail.toUpperCase()
+        nameDetail = document.getElementById("Name").innerHTML = `${userInfo[i].businessName.toUpperCase()}`
+
     }
 
 
 }
 
 profileNAme()
-
-
-// function profilePics() {
-
-//     for (i = 0; i < userInfo.length; i++) {
-
-//         document.getElementById("imageDisplay").value = document.getElementById("customFile").value
-
-//         alert(document.getElementById("customFile").value)
-//     }
-
-
-// }
-
-
-
-
-
-
-
-
-/*
-
-
-Storage location that houses the state of each user's
-object in such a way that once that object is deleted, the state is empty for another object to occupy.
-
-*/

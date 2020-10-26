@@ -1,3 +1,6 @@
+
+
+
 function ManageAds() {
     userDetails = " ";
     for (i = 0; i < userInfo.length; i++) {
@@ -60,14 +63,14 @@ function ManageAds() {
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" onclick="AdsCreate()" class="btn btn-primary" id="add-btn" data-dismiss="modal">Create</button>
+          <button type="button" onclick="adCreate()" class="btn btn-primary" id="add-btn" data-dismiss="modal">Create</button>
         </div>
       </div>
     </div>
   </div>
-  
-        
-    </div>`
+    </div>
+    
+    `
     }
     document.getElementById("registration-form").innerHTML = userDetails
 }
@@ -75,34 +78,106 @@ function ManageAds() {
 
 
 
-function AdsCreate() {
-    userDetails = " ";
-    for (i = 0; i < userInfo.length; i++) {
-        userDetails = `
 
-    <h3 style="margin-top: 4rem; font-size: 18px; font-weight: bold;line-height: 23px;">Adverts</h3>
-    <div class="card mb-3" id="forza">
-    <div class="row no-gutters">
-      <div class="col-md-4" id="marko">
-        <img src="${userInfo[i].inputGroup}" class="card-img" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">${userInfo[i].recipientName}</h5>
-          <p class="card-text">${userInfo[i].messageText}</p>
-          <p class="card-text"><strong class="text-muted">Ejike & Sons</strong></p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          <a href="#" class="btn btn-primary"><strong>Delete</strong></a>
-        </div>
+
+//saving the details gotten into the local storage
+let adsPost = JSON.parse(localStorage.getItem("ads"))
+if (adsPost == null) {
+    adsPost = []
+}
+
+function adCreate(){
+  
+  newAd = {
+    recipientName: document.getElementById("recipient-name").value,
+    messageText: document.getElementById("message-text").value,
+    inputGroup: document.getElementById("inputGroupFile02").value
+  }
+
+
+  if (newAd.recipientName != '' &&   newAd.messageText != ''){
+    adsPost.push(newAd)
+    localStorage.setItem("ads", JSON.stringify(adsPost))
+    displayAds()  
+     
+} else {
+  swal("Error!", "Kindly fill all fields", "warning");
+}
+
+}
+
+
+
+
+
+
+function displayAds(){
+  userDetails = " ";
+  for (i = 0; i < userInfo.length; i++) {
+      userDetails = `
+
+  <h3 style="margin-top: 4rem; font-size: 18px; font-weight: bold;line-height: 23px;">Adverts</h3>
+  <div class="card mb-3" id="forza">
+  <div class="row no-gutters">
+    <div class="col-md-4" id="marko">
+      <img src="${adsPost[i].inputGroup}" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">${adsPost[i].recipientName}</h5>
+        <p class="card-text">${adsPost[i].messageText}</p>
+        <p class="card-text"><strong class="text-muted">${userInfo[i].businessName}</strong></p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <button type="button" onclick="deleteAd(${i})" class="btn btn-primary">Delete</button>
       </div>
     </div>
   </div>
-        
-        
-        `
+</div>
+      
+      `
 
 
+  }
+
+
+  document.getElementById("registration-form").innerHTML = userDetails
+}
+
+displayAds()
+
+//deleting a document
+function deleteAd(id){
+
+  confirmMessage = confirm("Are you sure you want to delete this document?")
+
+
+  if (confirmMessage == true) {
+      adsPost.splice(id, 1)
+      localStorage.setItem("ads", JSON.stringify(adsPost))
     }
-    document.getElementById("registration-form").innerHTML = userDetails
+    displayAds()
+}
+
+function getFile() {
+
+  document.querySelector("#customFile").addEventListener("change", function() {
+      const reader = new FileReader()
+
+      reader.addEventListener("load", () => {
+          // console.log(reader.result)
+
+          localStorage.setItem("StoreImages", reader.result)
+
+      })
+      reader.readAsDataURL(this.files[0])
+  })
+
+
+}
+
+
+function save() {
+  let c = localStorage.getItem("StoreImages")
+  document.getElementById("imageDisplay").src = c
 }
 
