@@ -158,19 +158,29 @@ h1 {
 
 
 .sign-up-container {
-    margin-left: -1rem;
-    width: 100%;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-width: 70%;
 }
 
 .left-container {
     padding-top: 3em;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
     /*    margin-right: 1em;*/
 }
 
+.right-container {
+    padding-top: 3em;
+    display: flex;
+    flex-direction: column;
+}
+
 .last-container {
+    margin: auto;
+    max-width: 70%;
     padding: 2rem 0;
 }
 
@@ -179,7 +189,21 @@ h1 {
 }
 
 input {
-    width: 34%;
+    width: 30vw;
+    padding-top: 7px;
+    height: 50px;
+    background: #FFFFFF;
+    /* border-radius: 10px; */
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-top: 1em;
+    /*  margin-right: : 2em;*/
+    border-bottom: 1px #313236 solid;
+}
+
+select {
+        width: 30vw;
     padding-top: 7px;
     height: 50px;
     background: #FFFFFF;

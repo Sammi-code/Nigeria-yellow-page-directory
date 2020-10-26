@@ -389,7 +389,7 @@ span .fas {
     font-size: 16px;
 }
 
-form label {
+.form1 label {
     color: #8F8F8F;
     font-family: "Ubuntu";
     font-size: 21px;
@@ -491,7 +491,7 @@ textarea:focus,
     outline: none;
 }
 
-textarea {
+.textarea1 {
     margin-bottom: 20px;
     width: 650px !important;
     padding-top: 15px;
@@ -499,7 +499,7 @@ textarea {
 
 input[placeholder],
 .select,
-textarea {
+.textarea1 {
     font-family: "ubuntu";
     font-weight: normal;
     font-size: 15px;
@@ -512,7 +512,7 @@ textarea {
     display: inline;
 }
 
-form {
+.form1 {
     display: flex;
     width: 700px;
     justify-content: left;
@@ -520,14 +520,14 @@ form {
     flex-wrap: wrap;
 }
 
-form input,
+/* form input,
 form select,
 textarea {
     width: 200px;
     outline: auto;
     outline-color: gray;
     border-radius: 5px;
-}
+} */
 
 .input-grey {
     background: #FEF9EA;

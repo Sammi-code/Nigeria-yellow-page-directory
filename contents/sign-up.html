@@ -64,7 +64,22 @@
                     <input type="text" name="business-name" id="business-name" placeholder="Business name"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     <input type="email" name="email" id="email" placeholder="Email">
                     <input type="password" name="password" id="password" placeholder="password">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                    <input type="text" name="address" id="business-address" placeholder="Address">
+                    <select name="category" id="busCategory">
+                        <option value="" disabled selected hidden>Category</option>
+                        <option>Real Estate/Property</option>
+                        <option>Beauty & Fashion</option>
+                        <option>Technology</option>
+                        <option>Catering & Decoration</option>
+                        <option>Agriculture</option>
+                        <option>Restaurant</option>
+                        <option>Construction and Renovation</option>
+                        <option>Transportation</option>
+                        <option>News & Media</option>
+                        <option>Health and Fitness</option>
+                        <option>Education & Schools</option>
+                        <option>Electronics</option>
+                    </select>
+                    <!-- <input type="text" name="address" id="business-address" placeholder="Category"> -->
                 </div>
                 <div class="right-container">
                     <!-- I added Id to all input -->
@@ -78,7 +93,7 @@
             <div class="last-container">
                 <input class="check" type="checkbox" name="check-box" id="check-box"> <small>By registering, I agree to the Policy and Terms of Conditions</small> <br>
                 <!-- I added Id to the register button -->
-                <button class="btn create-account-btn" id="register-btn"> Register</button>
+                <button class="btn create-account-btn" onclick="userForm(event)" id="register-btn"> Register</button>
                 <p class="ank">Already have an account? <a href="../contents/login.html">Sign In</a></p>
             </div>
         </form>
@@ -139,6 +154,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- I link file to external javascript -->
     <script src="../assets/js/sign-up.js"></script>
 

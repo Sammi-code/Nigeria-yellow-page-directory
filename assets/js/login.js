@@ -60,7 +60,7 @@ const signUser = (e) => {
               document.getElementById('login-button').innerHTML = '';
           },4800 );
           setTimeout(() => {
-           window.location.assign("../contents/userspage.html");
+           window.location.assign("../contents/userspagelatest.html");
         },3500 );
          
     } else {
