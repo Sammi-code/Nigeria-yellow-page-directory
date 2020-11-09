@@ -5,16 +5,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE-edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="../assets/img/logo2.png">
+  <link rel="icon" href="./assets/img/logo2.png">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/bc9f75cc29.js" crossorigin="anonymous"></script>
 
   <!-- Style CSS -->
-  <link rel="stylesheet" href="../assets/css/eventsearch.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
 
-  <title>Naija Yellow Catalogue | Search Result</title>
+  <title>Base Project</title>
 
 </head>
 
@@ -30,60 +30,24 @@
       <div class=" nav-flex collapse navbar-collapse" id="navbarNav">
         <div class="nav-item-1 mr-auto">
           <ul>
-            <li><a href="../index.html" class="active">Home</a></li>
-            <li><a href="./about.html">About us</a></li>
-            <li><a href="./pricing.html">Pricing</a></li>
-            <li><a href="./contact-us.html">Contact</a></li>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="./contents/about.html">About us</a></li>
+            <li><a href="./contents/pricing.html">Pricing</a></li>
+            <li><a href="./contents/contact-us.html">Contact</a></li>
           </ul>
         </div>
         <div class="nav-item-2">
           <ul>
-            <li><a href="./login.html">Sign-in</a></li>
-            <li><a href="./sign-up.html">Register</a></li>
-            <li><a href="./sign-up.html" class="add-btn">+ Add Listings</a></li>
+            <li><a href="./contents/login.html">Sign-in</a></li>
+            <li><a href="./contents/sign-up.html">Register</a></li>
+            <li><a href="./contents/sign-up.html" class="add-btn">+ Add Listings</a></li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
 
-  <main>
-    <!-- SECTION-1 -->
-    <section id="section-1">
-      <div class="container">
-        <div class="search-header">
-          <h2>Event Search Results</h2>
-        </div>
-        <div class="search-box">
-          <form>
-            <input type="text" id="valueOne" name="event" placeholder="Musicals">
-            <input type="text" id="valueTwo" name="location" placeholder="Abuja">
-            <input type="text" id="valueThree" name="date" placeholder="05/10/2020">
-            <button type="submit"><i class="fas fa-search"></i></button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION-2 -->
-    <section id="section-2">
-      <div class="container">
-        <div class="events-grid">
-          <div class="events-result" id="eventResult">
-            
-          </div>
-          <!-- Declaring a somehow dynamic map-->
-          <div class="map">
-            <iframe width="357" height="881" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=357&amp;height=881&amp;hl=en&amp;q=Ahmadu%20Bello%20Way,%20Gudu%20Abuja+(Iya%20basira)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> 
-            <a href='https://www.embedmap.net/'>maps generator</a> 
-            <script type='text/javascript' src='https://maps-generator.com/google-maps-authorization/script.js?id=611b5399c8dc82cd74e6a3982b17e9c617870549'></script>         </div>
-        </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
+   <!-- FOOTER -->
   <footer>
     <div class="footer-container">
       <img src="../assets/img/logo.png" alt="The Footer Image">
@@ -103,10 +67,10 @@
             <a href="#">
               <li>Register</li>
             </a>
-            <a href="./faq.html">
+            <a href="./contents/faq.html">
               <li>FAQs</li>
             </a>
-            <a href="./terms.html">
+            <a href="./contents/terms.html">
               <li>Terms & Conditions</li>
             </a>
             <a href="#">
@@ -138,11 +102,7 @@
     </div>
   </footer>
 
-
-  <script src="../assets/js/search.js"></script>
-  <script>
-    recoverSearch();
-  </script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -155,6 +115,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
+
 </body>
 
 </html>

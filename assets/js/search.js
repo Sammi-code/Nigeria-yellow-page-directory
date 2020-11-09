@@ -48,7 +48,7 @@ function search() {
   show = document.getElementById('events').value; // Name of Event
   state = document.getElementById('state').value; // Name of State
 
-  usersObject = allEvents.filter(x => x.eventName.includes(show)); // Filter name and get the name
+  usersObject = eventAdd.filter(x => x.eventName.includes(show)); // Filter name and get the name
 
   if (usersObject == false) {
     // If the keyword is not in the local storage 
@@ -104,15 +104,15 @@ function recoverSearch() {
 
 // The HTML Template to display when an event is searched for
 function displaySearch(arr) {
-  searchContent = "";
+  searchContent = " ";
   for (j = 0; j < arr.length; j++) {
     document.getElementById('valueOne').value = arr[j].eventName;
-    document.getElementById('valueTwo').value = arr[j].location;
-    document.getElementById('valueThree').value = new Date();
+    document.getElementById('valueTwo').value = arr[j].eventLoc;
+    
     searchContent +=
       `<div class="result-grid">
     <div class="result-img">
-      <img src="${arr[j].pics}" alt="${arr[j]}">
+      <img src="${arr[j].uploadFile}" alt="${arr[j]}">
     </div>
     <div class="result-desc">
       <p><i class="fas fa-check"></i> verified</p>

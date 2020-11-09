@@ -470,9 +470,10 @@ form input:focus {}
 }
 
 
-/* .input {
-    width: 100p;
-} */
+#adText{
+    width: 466px;
+    height: 62px;
+}
 
 input:focus,
 select:focus,
@@ -516,15 +517,6 @@ input[placeholder],
     flex-wrap: wrap;
 }
 
-
-/* form input,
-form select,
-textarea {
-    width: 200px;
-    outline: auto;
-    outline-color: gray;
-    border-radius: 5px;
-} */
 
 .input-grey {
     background: #FEF9EA;

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/img/logo2.png">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/bc9f75cc29.js" crossorigin="anonymous"></script>
+
+  <!-- Style CSS -->
+ 
+
+  <title>Naija Yellow Catalogue | Events</title>
+
+</head>
+
+<body>
+            <!-- Button trigger modal -->
+            <button type="button" id= "main-btn" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                Create Advert
+              </button>
+
+
+<!-- Modal -->
+ <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Create Advertisement</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+            <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Advert Title:</label>
+                    <input type="text" class="form-control" id="adName">
+                  </div>
+                  <div class="form-group">
+                    <label for="message-text" class="col-form-label">Description:</label>
+                    <textarea class="form-control" id="adText"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label" style=" color:#8f8f8f; ">Picture / Flyer / Poster</label>
+                        <div style=" height:230px; border-radius:5px; border:3px dashed #c4c4c4; " class="custom-file">
+                        <div class="custom-file"  id="change">
+                          <input id="uploadDoc" type="file"  onchange="imageLoader(event)"  style="height:250px; width:600px; cursor:pointer;" class="custom-file-input" name="filename" id="customFile" accept="image/gif, image/jpeg, image/png , .pdf , .jpeg,.png">
+                        </div> 
+                        <div style="width:600px; height:230px;" >
+                        <img src="" id="document" style="width:430px; height:220px; margin-left:15px; margin-top:-35px; display:none;">
+                        <div id="picCont">
+                          <i  class="fas fa-file-upload picCont"  style="text-align:center; color:#c4c4c4; font-size:90px; margin-left:190px; margin-top:-23px; margin-bottom:10px; "></i>
+                                  
+                                  <p class="picCont" style="text-align:center; color:#8f8f8f; margin-left:-140px; " >Drag or drop here</p>
+                                  <p class="picCont" style="text-align:center; color:#8f8f8f; margin-left:-140px; " >Or</p>
+                                  <p class="picCont" style="text-align:center; color:#8f8f8f; margin-left:-140px; " >Browse files</p>
+                        </div>
+                         </div>
+                          
+                        </div>
+                        </div>
+                        <label for="message-text" class="col-form-label" style=" font-size:14px; color:#c4c4c4; ">Accepted file types : .jpeg, .jpg, .png &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><i class="fas fa-lock" style="color:#c4c4c4;"> </i> Secure </span></label>
+                </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" onclick="adCreate()" class="btn btn-primary" id="add-btn" data-dismiss="modal">Create</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>  

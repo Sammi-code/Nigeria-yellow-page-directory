@@ -116,6 +116,8 @@ function displayImage(event){ // display selected image function
         reader.readAsDataURL(file);
       }
     }
+
+
 //putting both functions into a single function
 function imageLoader(event) {
   displayImage(event)
@@ -205,6 +207,8 @@ function  displayDocument() {
   
   document.getElementById("registration-form").innerHTML = userDetails
 }
+
+
 
 //deleting a document
 function deleteDoc(i) {
