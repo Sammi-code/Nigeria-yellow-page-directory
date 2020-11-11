@@ -51,7 +51,7 @@ function findBusiness() {
   
   // Getting the searched events in the local storage and displaying it
   function recoverSearch() {
-    searchResults = JSON.parse(localStorage.getItem("saveBusiness"));
+    searchResults = JSON.parse(localStorage.getItem("userInfo"));
     if (searchResults == false) {
       swal("Error!", "Details not found", "warning");
     } else {
